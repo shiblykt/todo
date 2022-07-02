@@ -13,34 +13,35 @@ body {
   box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21); }
 
 p.color_completed {
+  background: #198754;
   width: fit-content;
-  display: grid;
   color: white;
-  background-color: #198754;
   border-radius: 15px;
   padding: 5px; }
 
 p.color_pending {
+  background: #dc3545;
   width: fit-content;
   color: white;
-  background-color: #dc3545;
   border-radius: 15px;
   padding: 5px; }
 
 .header-bar {
-  background-color: #a1a1e7; }
+  background-color: #a1a1e7;
+  display: flex;
+  justify-content: space-evenly; }
 
 .grid-container {
   display: grid;
-  gap: 2rem;
+  gap: 50px;
   padding: 10px; }
 
 .task-wrapper {
+  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
   max-width: 750px;
   margin: 50px;
   background-color: #fafafa;
-  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
   padding: 20px; }
 
 @media screen and (min-width: 768px) {

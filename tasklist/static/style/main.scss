@@ -1,4 +1,16 @@
 $primary-color: rgb(161, 161, 231);
+$status-pending: #dc3545;
+@mixin status($theme: #198754) {
+  background: $theme;
+  width: fit-content;
+  color: white;
+  border-radius: 15px;
+  padding: 5px;
+}
+@mixin shadow {
+  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+}
 body {
   margin: 0%;
   padding: 0%;
@@ -10,42 +22,33 @@ body {
   max-width: 100%;
   margin: auto;
   background-color: #fff;
-  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+  @include shadow;
 }
 p.color_completed {
-  width: fit-content;
-  display: grid;
-  color: white;
-  background-color: #198754;
-  border-radius: 15px;
-  padding: 5px;
+  @include status;
 }
 p.color_pending {
-  width: fit-content;
-  color: white;
-  background-color: #dc3545;
-  border-radius: 15px;
-  padding: 5px;
+  @include status($theme: #dc3545);
 }
 .header-bar {
   background-color: $primary-color;
+  display: flex;
+  justify-content: space-evenly;
 }
 .grid-container {
   display: grid;
-  gap: 2rem;
+  gap: 50px;
   padding: 10px;
 }
 .task-wrapper {
+  @include shadow;
   max-width: 750px;
   margin: 50px;
   background-color: #fafafa;
-  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
   padding: 20px;
 }
 @media screen and (min-width: 768px) {
   .grid-container {
-    grid-template-columns: repeat(4,1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
