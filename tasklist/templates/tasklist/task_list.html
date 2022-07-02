@@ -15,33 +15,55 @@
   </div>
 </div>
 
-<hr />
-<h1 align="center">my to do lists</h1>
-<a href="{% url 'task-create' %}">add item</a>
-<form method="get">
-  <input type="date" name="search-date" value="{{search_input}}" />
-  <input type="submit" value="search" />
-</form>
+<h1 align="center">Manage your tasks</h1>
+
+<section class="search-container">
+  <div class="input-container">
+    <form method="get">
+      <input
+        type="date"
+        name="search-date"
+        class="input-field"
+        value="{{search_input}}"
+      />
+      <button type="submit" class="input-button" style="cursor: pointer">
+        <i class="fa fa-search"></i>
+      </button>
+    </form>
+  </div>
+</section>
+
 <div class="grid-container">
   {% for task in tasks %}
   <div class="task-wrapper">
     <div class="delete-task">
       <a href="{% url 'task-delete' task.id %}"
-        ><i class="fa fa-times-circle" style="font-size:24px"></i
+        ><i class="fa fa-times-circle" style="font-size: 24px"></i
       ></a>
     </div>
-    <div class="task-head">
-      <strong>Task:{{forloop.counter}}</strong>
-    </div>
-    <div><p>{{task.title}}</p></div>
-    <div><p>{{task.description}}</p></div>
+    <div><b>{{forloop.counter}}.{{task.title|upper}}</b></div>
+    <div class="description-wrapper"><p>{{task.description}}</p></div>
     <div><p>{{task.due}}</p></div>
-    <div><p class="color_{{ task.status }}"><i class="fa fa-check" style="font-size:24px"></i></p></div>
-    <div><a href="{% url 'task-update' task.id %}">edit</a></div>
+    <div class="edit-task">
+      <a style="margin-top: 20px" href="{% url 'task-update' task.id %}"
+        ><i class="fa fa-edit" style="font-size: 36px"></i
+      ></a>
+      <p class="color_{{ task.status }}">
+        <i class="fa fa-check" style="font-size: 24px"></i>
+      </p>
+    </div>
   </div>
 
   {% empty %}
   <p>no items in list</p>
   {% endfor %}
+  <a
+    class="task-wrapper"
+    href="{% url 'task-create' %}"
+    style="text-decoration: none"
+    ><div style="display: flex; justify-content: center; margin-top: 80px">
+      <i class="fa fa-plus" style="font-size: 44px"></i></div
+  ></a>
+
+  {% endblock %}
 </div>
-{% endblock %}

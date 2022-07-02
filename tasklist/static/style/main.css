@@ -28,9 +28,15 @@ p.color_pending {
   padding: 5px; }
 
 .header-bar {
-  background-color: #a1a1e7;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-image: linear-gradient(to right, #200122, #6f0000);
   display: flex;
-  justify-content: space-evenly; }
+  justify-content: space-evenly;
+  padding: 20px;
+  -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
+  box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21); }
 
 .grid-container {
   display: grid;
@@ -41,21 +47,80 @@ p.color_pending {
   -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
   box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
   color: #fff;
-  max-width: 750px;
-  margin: 50px;
+  max-width: 250px;
+  margin: 0.5rem;
   background-color: #293138;
   border-radius: 5px;
-  padding: 0px 0px 20px 20px; }
+  padding: 0px 0px 20px 20px;
+  word-wrap: break-word; }
 
 @media screen and (min-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(4, 1fr); } }
-.task-wrapper a {
+a {
   color: #fff; }
 
 .delete-task {
   display: flex;
   justify-content: end;
   padding: 5px; }
+
+.input-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 20px;
+  width: 250px;
+  border-radius: 5px;
+  background-color: #467fd0; }
+
+.input-container input:focus,
+.input-container input:active {
+  outline: none; }
+
+.input-container input {
+  border: none;
+  height: 30.5px;
+  width: 180px;
+  border-radius: 5px 0px 0px 5px; }
+
+.input-button {
+  border-radius: 0px 5px 5px 0px;
+  height: 30px;
+  width: 64px;
+  background-color: #467fd0;
+  color: #fff;
+  border: none; }
+
+.search-container {
+  display: flex;
+  justify-content: end;
+  margin-top: 50px; }
+
+.edit-task {
+  display: flex;
+  justify-content: space-between; }
+
+.login-container {
+  background-color: #293138;
+  max-width: 400px;
+  margin: auto;
+  padding: 50px;
+  border-radius: 15px;
+  margin-top: 200px; }
+
+input[type='text'] {
+  width: 200px;
+  height: 30px;
+  outline: none;
+  border-radius: 5px; }
+
+input[type='password']::placeholder {
+  padding: 10px; }
+
+input[type='password'] {
+  width: 200px;
+  height: 30px;
+  outline: none;
+  border-radius: 5px; }
 
 /*# sourceMappingURL=main.css.map */

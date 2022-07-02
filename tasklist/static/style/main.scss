@@ -1,6 +1,7 @@
-$primary-color: rgb(161, 161, 231);
+$header-color: linear-gradient(to right, #200122, #6f0000);
 $status-pending: #dc3545;
 $font-color: #fff;
+$task-color: #293138;
 @mixin status($theme: #198754) {
   background: $theme;
   width: fit-content;
@@ -11,6 +12,16 @@ $font-color: #fff;
 @mixin shadow {
   -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
   box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
+}
+@mixin d-flex-between($position: space-between) {
+  display: flex;
+  justify-content: $position;
+}
+@mixin input-fields {
+  width: 200px;
+  height: 30px;
+  outline: none;
+  border-radius: 5px;
 }
 body {
   margin: 0%;
@@ -33,9 +44,14 @@ p.color_pending {
   @include status($theme: grey);
 }
 .header-bar {
-  background-color: $primary-color;
+  width: 100%;
+  position: fixed;
+  top: 0px;
+  background-image: $header-color;
   display: flex;
   justify-content: space-evenly;
+  padding: 20px;
+  @include shadow;
 }
 .grid-container {
   display: grid;
@@ -45,22 +61,74 @@ p.color_pending {
 .task-wrapper {
   @include shadow;
   color: $font-color;
-  max-width: 750px;
-  margin: 50px;
-  background-color: #293138;
+  max-width: 250px;
+  margin: 0.5rem;
+  background-color: $task-color;
   border-radius: 5px;
   padding: 0px 0px 20px 20px;
+  word-wrap: break-word;
 }
 @media screen and (min-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.task-wrapper a {
+a {
   color: $font-color;
 }
 .delete-task {
   display: flex;
   justify-content: end;
   padding: 5px;
+}
+.input-container {
+  @include d-flex-between;
+  margin: 20px;
+  width: 250px;
+  border-radius: 5px;
+  background-color: rgb(70, 127, 208);
+}
+.input-container input:focus,
+.input-container input:active {
+  outline: none;
+}
+.input-container input {
+  border: none;
+  height: 30.5px;
+  width: 180px;
+  border-radius: 5px 0px 0px 5px;
+}
+.input-button {
+  border-radius: 0px 5px 5px 0px;
+  height: 30px;
+  width: 64px;
+  background-color: rgb(70, 127, 208);
+  color: $font-color;
+  border: none;
+}
+.search-container {
+  @include d-flex-between($position: end);
+  margin-top: 50px;
+}
+.edit-task {
+  @include d-flex-between;
+}
+
+.login-container {
+  background-color: $task-color;
+  max-width: 400px;
+  margin: auto;
+  padding: 50px;
+  border-radius: 15px;
+  margin-top: 200px
+}
+input[type='text'] {
+  @include input-fields;
+}
+
+input[type='password']::placeholder{
+  padding: 10px;
+}
+input[type='password'] {
+  @include input-fields;
 }
