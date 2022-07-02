@@ -3,26 +3,27 @@ body {
   padding: 0%;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #fafafa; }
+  background-color: #0f0f0f;
+  color: #fff; }
 
 .container {
   max-width: 100%;
   margin: auto;
-  background-color: #fff;
-  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21); }
+  background-color: var(--color-canvas-default);
+  -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
+  box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21); }
 
 p.color_completed {
   background: #198754;
   width: fit-content;
-  color: white;
+  color: #fff;
   border-radius: 15px;
   padding: 5px; }
 
 p.color_pending {
-  background: #dc3545;
+  background: grey;
   width: fit-content;
-  color: white;
+  color: #fff;
   border-radius: 15px;
   padding: 5px; }
 
@@ -37,15 +38,24 @@ p.color_pending {
   padding: 10px; }
 
 .task-wrapper {
-  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+  -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
+  box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
+  color: #fff;
   max-width: 750px;
   margin: 50px;
-  background-color: #fafafa;
-  padding: 20px; }
+  background-color: #293138;
+  border-radius: 5px;
+  padding: 0px 0px 20px 20px; }
 
 @media screen and (min-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(4, 1fr); } }
+.task-wrapper a {
+  color: #fff; }
+
+.delete-task {
+  display: flex;
+  justify-content: end;
+  padding: 5px; }
 
 /*# sourceMappingURL=main.css.map */

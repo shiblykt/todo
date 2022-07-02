@@ -1,34 +1,36 @@
 $primary-color: rgb(161, 161, 231);
 $status-pending: #dc3545;
+$font-color: #fff;
 @mixin status($theme: #198754) {
   background: $theme;
   width: fit-content;
-  color: white;
+  color: $font-color;
   border-radius: 15px;
   padding: 5px;
 }
 @mixin shadow {
-  -webkit-box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
-  box-shadow: 2px 2px 13px -4px rgba(0, 0, 0, 0.21);
+  -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
+  box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
 }
 body {
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #fafafa;
+  background-color: #0f0f0f;
+  color: $font-color;
 }
 .container {
   max-width: 100%;
   margin: auto;
-  background-color: #fff;
+  background-color: var(--color-canvas-default);
   @include shadow;
 }
 p.color_completed {
   @include status;
 }
 p.color_pending {
-  @include status($theme: #dc3545);
+  @include status($theme: grey);
 }
 .header-bar {
   background-color: $primary-color;
@@ -42,13 +44,23 @@ p.color_pending {
 }
 .task-wrapper {
   @include shadow;
+  color: $font-color;
   max-width: 750px;
   margin: 50px;
-  background-color: #fafafa;
-  padding: 20px;
+  background-color: #293138;
+  border-radius: 5px;
+  padding: 0px 0px 20px 20px;
 }
 @media screen and (min-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(4, 1fr);
   }
+}
+.task-wrapper a {
+  color: $font-color;
+}
+.delete-task {
+  display: flex;
+  justify-content: end;
+  padding: 5px;
 }

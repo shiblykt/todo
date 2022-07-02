@@ -16,7 +16,7 @@
 </div>
 
 <hr />
-<h1>my to do lists</h1>
+<h1 align="center">my to do lists</h1>
 <a href="{% url 'task-create' %}">add item</a>
 <form method="get">
   <input type="date" name="search-date" value="{{search_input}}" />
@@ -25,17 +25,19 @@
 <div class="grid-container">
   {% for task in tasks %}
   <div class="task-wrapper">
-    <div><strong>Task:{{forloop.counter}}</strong></div>
+    <div class="delete-task">
+      <a href="{% url 'task-delete' task.id %}"
+        ><i class="fa fa-times-circle" style="font-size:24px"></i
+      ></a>
+    </div>
+    <div class="task-head">
+      <strong>Task:{{forloop.counter}}</strong>
+    </div>
     <div><p>{{task.title}}</p></div>
     <div><p>{{task.description}}</p></div>
     <div><p>{{task.due}}</p></div>
-    <div><p class="color_{{ task.status }}">{{task.status}}</p></div>
+    <div><p class="color_{{ task.status }}"><i class="fa fa-check" style="font-size:24px"></i></p></div>
     <div><a href="{% url 'task-update' task.id %}">edit</a></div>
-    <div>
-      <a href="{% url 'task-delete' task.id %}"
-        ><i class="fa fa-trash-o" style="font-size: 24px"></i
-      ></a>
-    </div>
   </div>
 
   {% empty %}
