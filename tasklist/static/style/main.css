@@ -6,6 +6,30 @@ body {
   background-color: #0f0f0f;
   color: #fff; }
 
+a {
+  color: #fff; }
+
+input[type='text'] {
+  width: 200px;
+  height: 30px;
+  outline: none;
+  border-radius: 5px; }
+
+input[type='password'] {
+  width: 200px;
+  height: 30px;
+  outline: none;
+  border-radius: 5px; }
+
+.btn {
+  color: #fff;
+  background-color: #dc3545;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer; }
+
 .container {
   max-width: 100%;
   margin: auto;
@@ -38,11 +62,6 @@ p.color_pending {
   -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
   box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21); }
 
-.grid-container {
-  display: grid;
-  gap: 50px;
-  padding: 10px; }
-
 .task-wrapper {
   -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
   box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
@@ -54,12 +73,14 @@ p.color_pending {
   padding: 0px 0px 20px 20px;
   word-wrap: break-word; }
 
+.grid-container {
+  display: grid;
+  gap: 50px;
+  padding: 10px; }
+
 @media screen and (min-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(4, 1fr); } }
-a {
-  color: #fff; }
-
 .delete-task {
   display: flex;
   justify-content: end;
@@ -83,7 +104,7 @@ a {
   width: 180px;
   border-radius: 5px 0px 0px 5px; }
 
-.input-button {
+.search-button {
   border-radius: 0px 5px 5px 0px;
   height: 30px;
   width: 64px;
@@ -100,7 +121,19 @@ a {
   display: flex;
   justify-content: space-between; }
 
-.login-container {
+.btn-logout {
+  color: #fff;
+  background-color: #c5cae9;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: #0f0f0f;
+  -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
+  box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21); }
+
+.form-container {
   background-color: #293138;
   max-width: 400px;
   margin: auto;
@@ -108,19 +141,20 @@ a {
   border-radius: 15px;
   margin-top: 200px; }
 
-input[type='text'] {
+.form-container select {
   width: 200px;
   height: 30px;
   outline: none;
   border-radius: 5px; }
 
-input[type='password']::placeholder {
-  padding: 10px; }
-
-input[type='password'] {
-  width: 200px;
-  height: 30px;
-  outline: none;
-  border-radius: 5px; }
+.delete-confirm-container {
+  background-color: #293138;
+  max-width: 400px;
+  margin: auto;
+  padding: 50px;
+  border-radius: 15px;
+  margin-top: 200px;
+  padding: 10px;
+  word-wrap: break-word; }
 
 /*# sourceMappingURL=main.css.map */

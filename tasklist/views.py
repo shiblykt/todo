@@ -11,7 +11,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import login
 
 class CustomLoginView(LoginView):
-    template_name = 'tasklist/login.html'
+    template_name = 'tasklist/login.html' #overriding default search of templates
     fields = '__all__'
     redirect_authenticated_user: True
 
@@ -29,7 +29,7 @@ class RegisterPage(FormView):
         user = form.save()
         if user is not None:
             login(self.request, user)
-        return super(RegisterPage, self).form_valid(form)
+        return super(RegisterPage, self).form_valid(form) 
 
     def get(self, *args, **kwargs):
         if self.request.user.is_authenticated:
@@ -51,11 +51,6 @@ class TaskList(LoginRequiredMixin,ListView):
 
         return context
 
-
-# class TaskDetail(DetailView):
-#     model = Task
-#     context_object_name = 'task'
-#     template_name = 'tasklist/task.html'
 
 class TaskCreate(LoginRequiredMixin,CreateView):
     model = Task

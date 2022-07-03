@@ -1,11 +1,13 @@
 {% extends 'tasklist/master.html' %} {% load static %} {%block content %}
-<div class="login-container">
-  <h1>login</h1>
+<div class="form-container">
+  <div><h1>login</h1></div>
   <form method="post">
     {% csrf_token %} {{form.as_p}}
-    <input class="input-button" type="submit" value="submit" />
+    <input class="btn" type="submit" value="submit" />
   </form>
-  <p>Dont have an account?<a href="{% url 'register' %}">Sign up</a></p>
+  <div>
+    <p>Dont have an account?<a href="{% url 'register' %}">Sign up</a></p>
+  </div>
 </div>
 
 {% endblock %}

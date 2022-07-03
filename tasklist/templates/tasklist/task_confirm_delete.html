@@ -1,8 +1,16 @@
 {% extends 'tasklist/master.html' %} {% load static %} {%block content %}
-<a href="{% url 'tasks' %}">go back</a>
-<form method="post">
-  {% csrf_token %}
-  <p>are you sure you want to delete this task?"{{tasks}}"</p>
-  <input type="submit" value="confirm" />
-</form>
+
+<div class="delete-confirm-container">
+  <form method="post">
+    {% csrf_token %}
+    <div style="display: flex; justify-content: end">
+      <a href="{% url 'tasks' %}"
+        ><i class="fa fa-times-circle" style="font-size: 24px"></i
+      ></a>
+    </div>
+    <p>are you sure you want to delete this task?"{{tasks}}"</p>
+    <input class="btn" type="submit" value="confirm" />
+  </form>
+</div>
+
 {% endblock %}

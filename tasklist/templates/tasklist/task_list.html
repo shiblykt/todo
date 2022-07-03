@@ -3,12 +3,12 @@
   <div>
     <h1 style="padding: 0px; margin: 0px">hello,{{request.user|title}}</h1>
     <h3 style="margin: 0">
-      You have <i>{{count}}</i> task{{ count|pluralize:"s" }} pending
+      You have <i>{{count}}</i> task{{ count|pluralize:"s" }} pending <!--display pending tasks-->
     </h3>
   </div>
   <div>
-    {% if request.user.is_authenticated %}
-    <a href="{% url 'logout' %}">logout</a>
+    {% if request.user.is_authenticated %} <!--view only if user logined-->
+    <a href="{% url 'logout' %}"><button class="btn-logout">logout</button></a>
     {% else %}
     <a href="{% url 'login' %}">login</a>
     {% endif %}
@@ -17,6 +17,7 @@
 
 <h1 align="center">Manage your tasks</h1>
 
+<!-- search tasks by dates  -->
 <section class="search-container">
   <div class="input-container">
     <form method="get">
@@ -26,13 +27,14 @@
         class="input-field"
         value="{{search_input}}"
       />
-      <button type="submit" class="input-button" style="cursor: pointer">
+      <button type="submit" class="search-button" style="cursor: pointer">
         <i class="fa fa-search"></i>
       </button>
     </form>
   </div>
 </section>
 
+<!-- tasks display section -->
 <div class="grid-container">
   {% for task in tasks %}
   <div class="task-wrapper">

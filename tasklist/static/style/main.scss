@@ -1,28 +1,55 @@
+// sass variables
 $header-color: linear-gradient(to right, #200122, #6f0000);
 $status-pending: #dc3545;
 $font-color: #fff;
 $task-color: #293138;
+
+// sass mixins
+@mixin buttons($color-theme: #dc3545) {
+  color: $font-color;
+  background-color: $color-theme;
+  width: 100px;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
 @mixin status($theme: #198754) {
   background: $theme;
   width: fit-content;
   color: $font-color;
   border-radius: 15px;
   padding: 5px;
-}
+}//mixins for status indicator
+
 @mixin shadow {
   -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
   box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
 }
+
 @mixin d-flex-between($position: space-between) {
   display: flex;
   justify-content: $position;
 }
+
 @mixin input-fields {
   width: 200px;
   height: 30px;
   outline: none;
   border-radius: 5px;
 }
+
+@mixin form-container {
+  background-color: $task-color;
+  max-width: 400px;
+  margin: auto;
+  padding: 50px;
+  border-radius: 15px;
+  margin-top: 200px;
+}//mmixins for forms
+
+// common styles
 body {
   margin: 0%;
   padding: 0%;
@@ -31,18 +58,37 @@ body {
   background-color: #0f0f0f;
   color: $font-color;
 }
+
+a {
+  color: $font-color;
+}
+
+input[type='text'] {
+  @include input-fields;
+}
+input[type='password'] {
+  @include input-fields;
+}
+
+.btn {
+  @include buttons;
+}
+
+// main page style
 .container {
   max-width: 100%;
   margin: auto;
   background-color: var(--color-canvas-default);
   @include shadow;
 }
+
 p.color_completed {
   @include status;
 }
 p.color_pending {
   @include status($theme: grey);
-}
+}//dynamiclly indicate status
+
 .header-bar {
   width: 100%;
   position: fixed;
@@ -53,11 +99,7 @@ p.color_pending {
   padding: 20px;
   @include shadow;
 }
-.grid-container {
-  display: grid;
-  gap: 50px;
-  padding: 10px;
-}
+
 .task-wrapper {
   @include shadow;
   color: $font-color;
@@ -67,20 +109,25 @@ p.color_pending {
   border-radius: 5px;
   padding: 0px 0px 20px 20px;
   word-wrap: break-word;
+} //individual task container
+
+.grid-container {
+  display: grid;
+  gap: 50px;
+  padding: 10px;
 }
 @media screen and (min-width: 768px) {
   .grid-container {
     grid-template-columns: repeat(4, 1fr);
   }
-}
-a {
-  color: $font-color;
-}
+} //media query for making grid responsive
+
 .delete-task {
-  display: flex;
-  justify-content: end;
+  @include d-flex-between($position: end);
   padding: 5px;
-}
+} //deleting individual tasks
+
+// search box in main page
 .input-container {
   @include d-flex-between;
   margin: 20px;
@@ -88,6 +135,7 @@ a {
   border-radius: 5px;
   background-color: rgb(70, 127, 208);
 }
+
 .input-container input:focus,
 .input-container input:active {
   outline: none;
@@ -98,7 +146,7 @@ a {
   width: 180px;
   border-radius: 5px 0px 0px 5px;
 }
-.input-button {
+.search-button {
   border-radius: 0px 5px 5px 0px;
   height: 30px;
   width: 64px;
@@ -110,25 +158,28 @@ a {
   @include d-flex-between($position: end);
   margin-top: 50px;
 }
+// end of search box styles
+
 .edit-task {
   @include d-flex-between;
-}
+}//edit icon in individual task container
 
-.login-container {
-  background-color: $task-color;
-  max-width: 400px;
-  margin: auto;
-  padding: 50px;
-  border-radius: 15px;
-  margin-top: 200px
+.btn-logout {
+  @include buttons($color-theme: #c5cae9);
+  color: #0f0f0f;
+  @include shadow;
 }
-input[type='text'] {
+// form styles
+.form-container {
+  @include form-container;
+}
+.form-container select {
   @include input-fields;
 }
 
-input[type='password']::placeholder{
+// delete confirmation page
+.delete-confirm-container {
+  @include form-container;
   padding: 10px;
-}
-input[type='password'] {
-  @include input-fields;
+  word-wrap: break-word;
 }
