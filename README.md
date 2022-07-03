@@ -1,7 +1,11 @@
 # Django todo webapp using class based views
 
-following features are added
----------------------------------------------------------------------------
+tech used:html,css,python,django,postgresql,sass
+https://sass-lang.com/guide
+references:https://www.youtube.com/watch?v=llbtoQTt4qw&list=LL&index=6
+
+## following features are added
+
 ● There must be option to signup and login to the application
 ● Every user must be able to create todo's
 ○ Each todo will have a title, description, due date and status.
