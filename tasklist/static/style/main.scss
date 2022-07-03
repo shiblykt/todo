@@ -36,6 +36,7 @@ $task-color: #293138;
 @mixin input-fields {
   width: 200px;
   height: 30px;
+  margin: 10px;
   outline: none;
   border-radius: 5px;
 }
@@ -46,7 +47,7 @@ $task-color: #293138;
   margin: auto;
   padding: 50px;
   border-radius: 15px;
-  margin-top: 200px;
+  margin-top: 100px;
 }//mmixins for forms
 
 // common styles
