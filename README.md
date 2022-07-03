@@ -1,9 +1,12 @@
 # Django todo webapp using class based views
 
 ![Screenshot (477)](https://user-images.githubusercontent.com/100059356/177047136-77deba97-a507-436a-9473-825c7acc1d47.png)
+
 tech used:html,css,python,django,postgresql,sass
-https://sass-lang.com/guide
-references:https://www.youtube.com/watch?v=llbtoQTt4qw&list=LL&index=6
+
+references: https://www.youtube.com/watch?v=llbtoQTt4qw&list=LL&index=6
+            
+            https://sass-lang.com/guide
 
 ## following features are added
 
