@@ -1,5 +1,5 @@
 // sass variables
-$header-color: linear-gradient(to right, #200122, #6f0000);
+$header-color: hsl(0, 0%, 18.82%);
 $status-pending: #dc3545;
 $font-color: #fff;
 $task-color: #293138;
@@ -21,7 +21,7 @@ $task-color: #293138;
   color: $font-color;
   border-radius: 15px;
   padding: 5px;
-}//mixins for status indicator
+} //mixins for status indicator
 
 @mixin shadow {
   -webkit-box-shadow: 2px 2px 13px -4px rgba(255, 255, 255, 0.21);
@@ -42,13 +42,13 @@ $task-color: #293138;
 }
 
 @mixin form-container {
-  background-color: $task-color;
+  background-color: $header-color;
   max-width: 400px;
   margin: auto;
   padding: 50px;
   border-radius: 15px;
   margin-top: 100px;
-}//mmixins for forms
+} //mmixins for forms
 
 // common styles
 body {
@@ -56,7 +56,7 @@ body {
   padding: 0%;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #0f0f0f;
+  background-color: $task-color;
   color: $font-color;
 }
 
@@ -88,13 +88,13 @@ p.color_completed {
 }
 p.color_pending {
   @include status($theme: grey);
-}//dynamiclly indicate status
+} //dynamiclly indicate status
 
 .header-bar {
   width: 100%;
   position: fixed;
   top: 0px;
-  background-image: $header-color;
+  background-color: $header-color;
   display: flex;
   justify-content: space-evenly;
   padding: 20px;
@@ -106,7 +106,7 @@ p.color_pending {
   color: $font-color;
   max-width: 250px;
   margin: 0.5rem;
-  background-color: $task-color;
+  background-color: $header-color;
   border-radius: 5px;
   padding: 0px 0px 20px 20px;
   word-wrap: break-word;
@@ -134,7 +134,7 @@ p.color_pending {
   margin: 20px;
   width: 250px;
   border-radius: 5px;
-  background-color: rgb(70, 127, 208);
+  background-color: $status-pending;
 }
 
 .input-container input:focus,
@@ -151,7 +151,7 @@ p.color_pending {
   border-radius: 0px 5px 5px 0px;
   height: 30px;
   width: 64px;
-  background-color: rgb(70, 127, 208);
+  background-color: $status-pending;
   color: $font-color;
   border: none;
 }
@@ -163,11 +163,10 @@ p.color_pending {
 
 .edit-task {
   @include d-flex-between;
-}//edit icon in individual task container
+} //edit icon in individual task container
 
 .btn-logout {
-  @include buttons($color-theme: #c5cae9);
-  color: #0f0f0f;
+  @include buttons;
   @include shadow;
 }
 // form styles
