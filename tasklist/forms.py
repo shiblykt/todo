@@ -1,12 +1,12 @@
+# from dataclasses import fields
 # from django import forms
-# from .models import Task
+# from django.contrib.auth.models import User
 
-# class TaskForm(forms.Form):
+# class RegForm(forms.Form):
 #     class Meta:
-#          model = Task
-#          fields = ['pub_date', 'headline', 'content', 'reporter']
+#         model = User
+#         fields = ('username','password')
 
-#     title = forms.CharField(max_length=150)
-#     description = forms.CharField(widget=forms.Textarea)
-#     due = forms.DateField()
-#     status = forms.CharField(max_length=20)
+#     username = forms.CharField(widget=forms.TextInput)
+#     password = forms.CharField(widget=forms.PasswordInput)
+#     confirm = forms.CharField(widget=forms.PasswordInput)

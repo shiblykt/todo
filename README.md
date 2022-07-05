@@ -4,9 +4,11 @@
 
 tech used:html,css,python,django,postgresql,sass
 
-references: 1.https://www.youtube.com/watch?v=llbtoQTt4qw&list=LL&index=6
+references: 1.https://docs.djangoproject.com/en/4.0/topics/class-based-views/generic-editing/
+
+            2.https://www.youtube.com/watch?v=llbtoQTt4qw&list=LL&index=6
             
-            2.https://sass-lang.com/guide
+            3.https://sass-lang.com/guide
 
 ## following features are added
 

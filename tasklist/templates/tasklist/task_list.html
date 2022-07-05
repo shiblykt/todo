@@ -3,11 +3,13 @@
   <div>
     <h1 style="padding: 0px; margin: 0px">hello,{{request.user|title}}</h1>
     <h3 style="margin: 0">
-      You have <i>{{count}}</i> task{{ count|pluralize:"s" }} pending <!--display pending tasks-->
+      You have <i>{{count}}</i> task{{ count|pluralize:"s" }} pending
+      <!--display pending tasks-->
     </h3>
   </div>
   <div>
-    {% if request.user.is_authenticated %} <!--view only if user logined-->
+    {% if request.user.is_authenticated %}
+    <!--view only if user logined-->
     <a href="{% url 'logout' %}"><button class="btn-logout">logout</button></a>
     {% else %}
     <a href="{% url 'login' %}">login</a>
